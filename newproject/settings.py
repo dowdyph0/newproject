@@ -46,6 +46,7 @@ BOWER_INSTALLED_APPS = [
     'jquery#3.3.1',
     'bootstrap#4.0',
     'datatables#1.10.16',
+    'select2#4.0',
 ]
 
 MIDDLEWARE = [

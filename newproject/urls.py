@@ -16,13 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include
 from django.urls import path
-from core.views import test_staticfiles
+from core.views import test_bower_staticfiles
+from core.views import WorkOrderViewSet
 from rest_framework import routers
 
 router = routers.DefaultRouter()
+router.register(r'work_orders', WorkOrderViewSet)
+
 
 urlpatterns = [
     path(r'', include(router.urls)),
-    path(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('test_staticfiles', test_staticfiles),
+    path(r'api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('test_bower_staticfiles', test_bower_staticfiles),
 ]
